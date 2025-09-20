@@ -1,0 +1,36 @@
+.home-main {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(2.5rem, 8vw, 6rem);
+}
+
+.home-card {
+    background: var(--surface-elevated);
+    border-radius: var(--border-radius-lg);
+    padding: clamp(2.5rem, 6vw, 4.5rem);
+    text-align: center;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: grid;
+    gap: 1rem;
+    max-width: min(520px, 100%);
+}
+
+.home-card h1 {
+    margin: 0;
+    font-size: clamp(2.75rem, 8vw, 4rem);
+    letter-spacing: -0.02em;
+}
+
+.home-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: clamp(1.05rem, 3vw, 1.2rem);
+}
+
+@media (max-width: 640px) {
+    .home-card {
+        padding: clamp(2rem, 10vw, 3rem);
+    }
+}
