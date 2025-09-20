@@ -143,6 +143,7 @@ a:focus-visible {
     cursor: pointer;
     box-shadow: var(--shadow-soft);
     transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+
 }
 
 .sidebar-toggle:hover,
@@ -161,6 +162,7 @@ body.sidebar-open .sidebar-toggle {
     opacity: 0;
     pointer-events: none;
     transform: translateY(-2px);
+
 }
 
 .sidebar-toggle__bar {
@@ -202,6 +204,7 @@ body.sidebar-open .sidebar-toggle {
     display: grid;
     gap: 1.5rem;
 }
+
 
 .sidebar__close {
     border: none;
@@ -256,6 +259,7 @@ body.sidebar-open .sidebar-toggle {
     font-weight: 600;
 }
 
+
 .sidebar__list a::before {
     content: '';
     width: 8px;
@@ -277,6 +281,7 @@ body.sidebar-open .sidebar-toggle {
     opacity: 1;
     transform: translateX(0);
 }
+
 
 .sidebar__list a:hover,
 .sidebar__list a:focus-visible {
