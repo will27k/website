@@ -32,5 +32,6 @@
 @media (max-width: 640px) {
     .home-card {
         padding: clamp(2rem, 10vw, 3rem);
+
     }
 }
