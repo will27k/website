@@ -130,20 +130,39 @@ a:focus-visible {
 }
 
 .sidebar-toggle {
-    border: none;
-    background: transparent;
-    padding: 0.5rem;
-    border-radius: 12px;
+    position: fixed;
+    top: clamp(1rem, 3vw, 2rem);
+    left: clamp(1rem, 3vw, 2rem);
+    z-index: 50;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--surface-elevated);
+    padding: 0.65rem;
+    border-radius: var(--border-radius-sm);
     display: grid;
     gap: 0.35rem;
     cursor: pointer;
-    transition: background var(--transition), transform var(--transition);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+
 }
 
 .sidebar-toggle:hover,
 .sidebar-toggle:focus-visible {
-    background: var(--surface-highlight);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 28px 48px -32px rgba(18, 12, 42, 0.85);
+}
+
+.sidebar-toggle:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(140, 92, 255, 0.28), 0 28px 48px -32px rgba(18, 12, 42, 0.85);
+}
+
+body.sidebar-open .sidebar-toggle {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-2px);
+
 }
 
 .sidebar-toggle__bar {
@@ -180,6 +199,12 @@ a:focus-visible {
     justify-content: space-between;
     font-weight: 600;
 }
+
+.sidebar__nav {
+    display: grid;
+    gap: 1.5rem;
+}
+
 
 .sidebar__close {
     border: none;
@@ -229,6 +254,12 @@ a:focus-visible {
     transition: background var(--transition), transform var(--transition), color var(--transition);
 }
 
+.sidebar__list a[aria-current="page"] {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+
 .sidebar__list a::before {
     content: '';
     width: 8px;
@@ -245,6 +276,12 @@ a:focus-visible {
     opacity: 1;
     transform: translateX(0);
 }
+
+.sidebar__list a[aria-current="page"]::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 .sidebar__list a:hover,
 .sidebar__list a:focus-visible {
