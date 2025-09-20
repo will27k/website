@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Drinking Game Lobby</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/nba.css">
+</head>
+<body class="project-page">
+    <div class="page">
+        <header class="project-header">
+            <a class="back-link" href="../index.html" aria-label="Back to home">
+                <span aria-hidden="true">&#8592;</span>
+                Back to home
+            </a>
+            <div class="project-header__meta">
+                <p class="project-status">Prototype Lobby • Game rules coming soon</p>
+                <h1>NBA Drinking Game Lobby</h1>
+                <p class="project-intro">Assemble your roster before tip-off. Add teammates, curate the energy, and get ready for an unforgettable NBA night. Game mechanics and rule presets are on the way.</p>
+            </div>
+        </header>
+
+        <main class="project-main">
+            <section class="lobby-card" aria-labelledby="lobby-title">
+                <div class="lobby-card__header">
+                    <div>
+                        <h2 id="lobby-title">Player Lobby</h2>
+                        <p>Collect your crew in one place. Once the roster looks good, you&apos;ll be able to jump into the rule builder.</p>
+                    </div>
+                    <button type="button" class="outline-button" id="clear-lobby">Clear lobby</button>
+                </div>
+
+                <form id="player-form" class="player-form" autocomplete="off">
+                    <label class="visually-hidden" for="player-name">Player name</label>
+                    <input id="player-name" name="player-name" type="text" placeholder="Add a player by name" required maxlength="32">
+                    <button type="submit" class="primary-link">Add player</button>
+                </form>
+
+                <div class="lobby-list" aria-live="polite">
+                    <p class="empty-state">No players yet. Add your first teammate to get the lobby buzzing.</p>
+                    <ul id="player-list" class="player-list"></ul>
+                </div>
+            </section>
+
+            <aside class="sidebar-panel">
+                <div class="sidebar-panel__section">
+                    <h2>Game Night Notes</h2>
+                    <p>Pick a matchup, queue the broadcast, and keep a bottle of water nearby. Remember to play responsibly and create house rules that work for everyone.</p>
+                </div>
+                <div class="sidebar-panel__section">
+                    <h3>Next steps</h3>
+                    <ul>
+                        <li>Draft spotlight challenges for buzzer beaters, dunks, and heat checks.</li>
+                        <li>Curate balanced difficulty presets for casual to legendary nights.</li>
+                        <li>Sync the lobby with live box score data for dynamic triggers.</li>
+                    </ul>
+                </div>
+                <div class="sidebar-panel__footer">
+                    <p>Want to ideate with me? <a href="mailto:hello@sorastudio.xyz">hello@sorastudio.xyz</a></p>
+                </div>
+            </aside>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; <span id="year"></span> Sora Studio. Crafting experiences courtside.</p>
+        </footer>
+    </div>
+
+    <script src="../scripts/nba.js" defer></script>
+</body>
+</html>
