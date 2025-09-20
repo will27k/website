@@ -1,0 +1,209 @@
+.nba {
+    display: grid;
+    gap: clamp(2.5rem, 5vw, 4rem);
+    padding-top: clamp(5rem, 10vw, 8rem);
+}
+
+.nba__header {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 720px;
+}
+
+.nba__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+.nba__title {
+    margin: 0;
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+}
+
+.nba__copy {
+    margin: 0;
+    color: var(--text-dim);
+}
+
+.nba__content {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: start;
+}
+
+.lobby {
+    background: var(--card);
+    border-radius: var(--border-radius-lg);
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lobby__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.lobby__title {
+    margin: 0;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.lobby__form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75rem;
+}
+
+.lobby__form input {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 0.75rem 1rem;
+    color: var(--text);
+    font: inherit;
+}
+
+.lobby__form input::placeholder {
+    color: rgba(245, 247, 255, 0.45);
+}
+
+.lobby__hint {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.lobby__list {
+    display: grid;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.lobby__list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 1rem;
+}
+
+.lobby__name {
+    font-weight: 600;
+}
+
+.lobby__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lobby__actions button {
+    border: none;
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--text);
+    border-radius: 999px;
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background var(--transition);
+}
+
+.lobby__actions button:hover,
+.lobby__actions button:focus-visible {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+.lobby__empty {
+    margin: 0;
+    color: var(--text-dim);
+}
+
+.panel {
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02)) var(--card);
+    border-radius: var(--border-radius-lg);
+    padding: clamp(1.75rem, 4vw, 2.25rem);
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 1rem;
+}
+
+.panel__title {
+    margin: 0;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+}
+
+.panel__copy {
+    margin: 0;
+    color: var(--text-dim);
+}
+
+.panel__list {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.panel__player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--border-radius-sm);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.panel__player button {
+    border: none;
+    border-radius: 999px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--text);
+    cursor: pointer;
+    transition: background var(--transition);
+}
+
+.panel__player button:hover,
+.panel__player button:focus-visible {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.panel__footnote {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+}
+
+.panel__footnote a {
+    color: var(--accent);
+}
+
+.panel__footnote a:hover,
+.panel__footnote a:focus-visible {
+    color: var(--text);
+}
+
+@media (max-width: 640px) {
+    .lobby__form {
+        grid-template-columns: 1fr;
+    }
+
+    .lobby__actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}

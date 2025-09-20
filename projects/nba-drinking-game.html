@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Drinking Game Lobby</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/nba.css">
+</head>
+<body class="page page--nba">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open navigation" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <aside id="sidebar" class="sidebar" aria-hidden="true" data-sidebar>
+        <div class="sidebar__header">
+            <span class="sidebar__title">Navigate</span>
+            <button class="sidebar__close" aria-label="Close navigation" data-nav-toggle>&times;</button>
+        </div>
+        <nav class="sidebar__nav" aria-label="Primary">
+            <a class="sidebar__link" href="../index.html">Home</a>
+            <a class="sidebar__link" href="index.html">Projects</a>
+            <a class="sidebar__link" href="../about.html">About Me</a>
+        </nav>
+    </aside>
+    <div class="sidebar__scrim" hidden data-scrim></div>
+
+    <main class="nba" aria-labelledby="nba-title">
+        <header class="nba__header">
+            <p class="nba__eyebrow">Prototype</p>
+            <h1 class="nba__title" id="nba-title">NBA Drinking Game Lobby</h1>
+            <p class="nba__copy">Start building your lineup. Add everyone who's playing, rearrange, or remove them before the game begins. The guessing rounds are coming in a future update.</p>
+        </header>
+
+        <section class="nba__content" aria-labelledby="lobby-heading">
+            <div class="lobby" role="region" aria-live="polite">
+                <div class="lobby__header">
+                    <h2 class="lobby__title" id="lobby-heading">Player lobby</h2>
+                    <button type="button" class="btn btn--ghost" data-clear-lobby>Clear all</button>
+                </div>
+
+                <form class="lobby__form" id="player-form" autocomplete="off">
+                    <label class="visually-hidden" for="player-name">Player name</label>
+                    <input id="player-name" name="player-name" type="text" placeholder="Add a player" required maxlength="40">
+                    <button type="submit" class="btn">Add</button>
+                </form>
+                <p class="lobby__hint">Press Enter or tap add to save. Players stay saved locally so you can prep the roster before the party.</p>
+
+                <ul class="lobby__list" data-player-list></ul>
+                <p class="lobby__empty" data-empty-state>No players yet. Add your crew to get started.</p>
+            </div>
+
+            <aside class="panel panel--data" aria-labelledby="suggestions-heading">
+                <h2 class="panel__title" id="suggestions-heading">Fantasy player spotlight</h2>
+                <p class="panel__copy">Pulled from Hashtag Basketball's latest fantasy rankings. Use the quick-add buttons to drop popular stars into your lobby.</p>
+                <div class="panel__list" data-fantasy-picks></div>
+                <p class="panel__footnote"><a href="https://hashtagbasketball.com/fantasy-basketball-rankings" target="_blank" rel="noopener">View the full rankings</a></p>
+            </aside>
+        </section>
+    </main>
+
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/nba.js" defer></script>
+</body>
+</html>

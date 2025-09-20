@@ -1,0 +1,39 @@
+.about {
+    display: grid;
+    place-items: center;
+    min-height: calc(100vh - clamp(3rem, 6vw, 6rem));
+}
+
+.about__panel {
+    max-width: 520px;
+    background: var(--card);
+    padding: clamp(2rem, 5vw, 3rem);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow);
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+}
+
+.about__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin: 0;
+}
+
+.about__title {
+    margin: 0;
+    font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.about__copy {
+    margin: 0;
+    color: var(--text-dim);
+}
+
+.about__panel .btn {
+    justify-self: center;
+    margin-top: 0.5rem;
+}

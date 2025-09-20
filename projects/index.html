@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/projects.css">
+</head>
+<body class="page page--projects">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open navigation" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <aside id="sidebar" class="sidebar" aria-hidden="true" data-sidebar>
+        <div class="sidebar__header">
+            <span class="sidebar__title">Navigate</span>
+            <button class="sidebar__close" aria-label="Close navigation" data-nav-toggle>&times;</button>
+        </div>
+        <nav class="sidebar__nav" aria-label="Primary">
+            <a class="sidebar__link" href="../index.html">Home</a>
+            <a class="sidebar__link sidebar__link--active" href="index.html" aria-current="page">Projects</a>
+            <a class="sidebar__link" href="../about.html">About Me</a>
+        </nav>
+    </aside>
+    <div class="sidebar__scrim" hidden data-scrim></div>
+
+    <main class="projects" aria-labelledby="projects-title">
+        <header class="projects__header">
+            <p class="projects__eyebrow">Build Log</p>
+            <h1 class="projects__title" id="projects-title">Things I'm crafting</h1>
+            <p class="projects__copy">Click a card to jump into a live prototype or peek at what's on deck. More experiments are coming soon.</p>
+        </header>
+        <section class="projects__grid" aria-label="Project selection">
+            <a class="project-card project-card--primary" href="nba-drinking-game.html">
+                <span class="project-card__status pill">Live prototype</span>
+                <h2 class="project-card__title">NBA Drinking Game Lobby</h2>
+                <p class="project-card__body">Manage your party list, edit names, and get ready for tip-off. The full drinking game mechanics are coming later.</p>
+                <span class="project-card__cta">Enter the lobby</span>
+            </a>
+            <article class="project-card project-card--soon" aria-label="Project coming soon">
+                <span class="project-card__status pill">Coming soon</span>
+                <h2 class="project-card__title">New Project Teaser</h2>
+                <p class="project-card__body">I'm cooking up another interactive build. Stay tuned for the drop.</p>
+            </article>
+            <article class="project-card project-card--soon" aria-label="Project coming soon">
+                <span class="project-card__status pill">Coming soon</span>
+                <h2 class="project-card__title">Future Idea Board</h2>
+                <p class="project-card__body">Concept sketches, mood boards, and prototypes will land here shortly.</p>
+            </article>
+            <article class="project-card project-card--soon" aria-label="Project coming soon">
+                <span class="project-card__status pill">Coming soon</span>
+                <h2 class="project-card__title">Mystery Build</h2>
+                <p class="project-card__body">Have a feature request? Drop it in and it might become the next highlight.</p>
+            </article>
+        </section>
+    </main>
+
+    <script src="../scripts/main.js" defer></script>
+</body>
+</html>

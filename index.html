@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body class="page page--home">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open navigation" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <aside id="sidebar" class="sidebar" aria-hidden="true" data-sidebar>
+        <div class="sidebar__header">
+            <span class="sidebar__title">Navigate</span>
+            <button class="sidebar__close" aria-label="Close navigation" data-nav-toggle>&times;</button>
+        </div>
+        <nav class="sidebar__nav" aria-label="Primary">
+            <a class="sidebar__link sidebar__link--active" href="index.html">Home</a>
+            <a class="sidebar__link" href="projects/index.html">Projects</a>
+            <a class="sidebar__link" href="about.html">About Me</a>
+        </nav>
+        <footer class="sidebar__footer">
+            <p>Inspired by Sora visuals &mdash; exploring code that vibes.</p>
+        </footer>
+    </aside>
+    <div class="sidebar__scrim" hidden data-scrim></div>
+
+    <main class="home">
+        <section class="hero" role="banner">
+            <div class="hero__media" role="img" aria-label="Sora generated photo of a futuristic lounge"></div>
+            <div class="hero__content">
+                <p class="hero__eyebrow">Welcome</p>
+                <h1 class="hero__title">My Website</h1>
+                <p class="hero__subtitle">A playground for passion projects, experiments, and whatever I feel like vibing into code.</p>
+                <div class="hero__cta">
+                    <a class="btn" href="projects/index.html">Explore Projects</a>
+                    <a class="btn btn--ghost" href="about.html">About Me</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="spotlight">
+            <h2 class="spotlight__title">Featured Build</h2>
+            <article class="spotlight-card">
+                <header>
+                    <span class="pill">In progress</span>
+                    <h3>NBA Drinking Game Lobby</h3>
+                </header>
+                <p class="spotlight-card__copy">
+                    Organize your crew, add names to the lobby, and get ready for a night of hoops-fueled challenges. The full game is brewing, but the roster experience is ready to test-drive.
+                </p>
+                <a class="spotlight-card__link" href="projects/nba-drinking-game.html">Open the lobby</a>
+            </article>
+        </section>
+    </main>
+
+    <script src="scripts/main.js" defer></script>
+</body>
+</html>

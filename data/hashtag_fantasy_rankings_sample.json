@@ -1,0 +1,182 @@
+[
+  {
+    "rank": 1,
+    "name": "Nikola Jokic",
+    "team": "DEN",
+    "position": "C"
+  },
+  {
+    "rank": 2,
+    "name": "Luka Doncic",
+    "team": "DAL",
+    "position": "PG"
+  },
+  {
+    "rank": 3,
+    "name": "Shai Gilgeous-Alexander",
+    "team": "OKC",
+    "position": "PG/SG"
+  },
+  {
+    "rank": 4,
+    "name": "Giannis Antetokounmpo",
+    "team": "MIL",
+    "position": "PF/C"
+  },
+  {
+    "rank": 5,
+    "name": "Tyrese Haliburton",
+    "team": "IND",
+    "position": "PG"
+  },
+  {
+    "rank": 6,
+    "name": "Anthony Davis",
+    "team": "LAL",
+    "position": "PF/C"
+  },
+  {
+    "rank": 7,
+    "name": "Jayson Tatum",
+    "team": "BOS",
+    "position": "SF/PF"
+  },
+  {
+    "rank": 8,
+    "name": "Anthony Edwards",
+    "team": "MIN",
+    "position": "SG/SF"
+  },
+  {
+    "rank": 9,
+    "name": "LaMelo Ball",
+    "team": "CHA",
+    "position": "PG"
+  },
+  {
+    "rank": 10,
+    "name": "Victor Wembanyama",
+    "team": "SAS",
+    "position": "PF/C"
+  },
+  {
+    "rank": 11,
+    "name": "Domantas Sabonis",
+    "team": "SAC",
+    "position": "PF/C"
+  },
+  {
+    "rank": 12,
+    "name": "Kevin Durant",
+    "team": "PHX",
+    "position": "SF/PF"
+  },
+  {
+    "rank": 13,
+    "name": "Joel Embiid",
+    "team": "PHI",
+    "position": "C"
+  },
+  {
+    "rank": 14,
+    "name": "Devin Booker",
+    "team": "PHX",
+    "position": "SG/PG"
+  },
+  {
+    "rank": 15,
+    "name": "Karl-Anthony Towns",
+    "team": "MIN",
+    "position": "C"
+  },
+  {
+    "rank": 16,
+    "name": "Donovan Mitchell",
+    "team": "CLE",
+    "position": "SG"
+  },
+  {
+    "rank": 17,
+    "name": "Trae Young",
+    "team": "ATL",
+    "position": "PG"
+  },
+  {
+    "rank": 18,
+    "name": "Chet Holmgren",
+    "team": "OKC",
+    "position": "PF/C"
+  },
+  {
+    "rank": 19,
+    "name": "Ja Morant",
+    "team": "MEM",
+    "position": "PG"
+  },
+  {
+    "rank": 20,
+    "name": "Bam Adebayo",
+    "team": "MIA",
+    "position": "C"
+  },
+  {
+    "rank": 21,
+    "name": "Desmond Bane",
+    "team": "MEM",
+    "position": "SG"
+  },
+  {
+    "rank": 22,
+    "name": "Paolo Banchero",
+    "team": "ORL",
+    "position": "PF"
+  },
+  {
+    "rank": 23,
+    "name": "De'Aaron Fox",
+    "team": "SAC",
+    "position": "PG"
+  },
+  {
+    "rank": 24,
+    "name": "Jaylen Brown",
+    "team": "BOS",
+    "position": "SG/SF"
+  },
+  {
+    "rank": 25,
+    "name": "Jimmy Butler",
+    "team": "MIA",
+    "position": "SF"
+  },
+  {
+    "rank": 26,
+    "name": "Tyrese Maxey",
+    "team": "PHI",
+    "position": "PG/SG"
+  },
+  {
+    "rank": 27,
+    "name": "Darius Garland",
+    "team": "CLE",
+    "position": "PG"
+  },
+  {
+    "rank": 28,
+    "name": "Kyrie Irving",
+    "team": "DAL",
+    "position": "PG"
+  },
+  {
+    "rank": 29,
+    "name": "Scottie Barnes",
+    "team": "TOR",
+    "position": "SF/PF"
+  },
+  {
+    "rank": 30,
+    "name": "Cade Cunningham",
+    "team": "DET",
+    "position": "PG"
+  }
+]
