@@ -13,6 +13,7 @@ A minimal personal site for sharing passion projects with a simple, modern aesth
 
 - `data/nba_players.csv` lists the active player sample that powers the mystery pool. Run `python tools/update_player_pool.py` after editing the CSV to regenerate the `PLAYER_POOL` constant in `scripts/nba.js`.
 
+
 ## Getting started
 
 Open `index.html` in your browser to explore the experience. The interface is built with semantic HTML, modern CSS, and a touch of vanilla JavaScript for interactions.

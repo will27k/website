@@ -1506,6 +1506,7 @@ const PLAYER_POOL = [
 
 
 
+
 const defaultState = {
     players: [],
     scores: {},
@@ -1581,6 +1582,7 @@ const guessDatalist = document.getElementById('player-options');
 const roundFeedback = document.getElementById('round-feedback');
 const teamLogo = document.getElementById('team-logo');
 const playerPhotoFrame = document.querySelector('.player-photo');
+
 const playerPhoto = document.getElementById('player-photo');
 const hintPosition = document.getElementById('hint-position');
 const hintDraft = document.getElementById('hint-draft');
@@ -1830,6 +1832,7 @@ const updateHintUi = (player) => {
     if (playerPhotoFrame) {
         playerPhotoFrame.style.setProperty('--player-photo-src', `url("${player.photo}")`);
         playerPhotoFrame.classList.remove('is-revealed');
+
     }
 
     if (hintPosition) {
@@ -1949,6 +1952,7 @@ const applyResult = (isCorrect) => {
     if (playerPhotoFrame) {
         playerPhotoFrame.classList.add('is-revealed');
     }
+
     renderPlayers();
     renderScoreboard();
     persistState();
