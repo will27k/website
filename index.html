@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sora Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body class="home">
+    <div class="page">
+        <header class="top-bar">
+            <button class="sidebar-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open navigation">
+                <span class="sidebar-toggle__bar"></span>
+                <span class="sidebar-toggle__bar"></span>
+                <span class="sidebar-toggle__bar"></span>
+            </button>
+            <div class="branding">
+                <span class="branding__accent"></span>
+                <span class="branding__text">Sora Studio</span>
+            </div>
+            <a class="primary-link" href="#projects">View Projects</a>
+        </header>
+
+        <aside id="sidebar" class="sidebar" aria-hidden="true">
+            <div class="sidebar__header">
+                <span class="branding__text">Navigate</span>
+                <button class="sidebar__close" aria-label="Close navigation">&times;</button>
+            </div>
+            <nav class="sidebar__nav">
+                <div class="sidebar__section">
+                    <h2 class="sidebar__title">Projects</h2>
+                    <ul class="sidebar__list">
+                        <li><a href="projects/nba-drinking-game.html">NBA Drinking Game Lobby</a></li>
+                    </ul>
+                </div>
+                <div class="sidebar__section">
+                    <h2 class="sidebar__title">About Me</h2>
+                    <ul class="sidebar__list">
+                        <li><a href="#about">Who I Am</a></li>
+                        <li><a href="#focus">What I Build</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="sidebar__footer">
+                <p>Inspired by Sora&apos;s creative worlds.<br>Let&apos;s build something imaginative together.</p>
+            </div>
+        </aside>
+        <div id="sidebar-overlay" class="sidebar-overlay" hidden></div>
+
+        <main>
+            <section class="hero" id="home">
+                <div class="hero__text">
+                    <p class="eyebrow">Immersive Experiences &bullet; Crafted with care</p>
+                    <h1>Designing playful digital moments fueled by imagination.</h1>
+                    <p class="hero__description">Welcome to my creative lab where I prototype experimental interfaces and thoughtful tools. Dive into my latest build inspired by NBA nights and Sora&apos;s cinematic storytelling.</p>
+                    <div class="hero__actions">
+                        <a class="primary-link" href="projects/nba-drinking-game.html">Explore NBA Game Lobby</a>
+                        <a class="secondary-link" href="#projects">Browse all projects</a>
+                    </div>
+                </div>
+                <figure class="hero__media">
+                    <img src="https://cdn.openai.com/sora/images/sora_dragon_fruit_vendor.webp" alt="A Sora-generated cinematic photo of a dragon-fruit vendor in Tokyo" loading="lazy">
+                    <figcaption>Fresh inspiration from Sora&apos;s user generated photos.</figcaption>
+                </figure>
+            </section>
+
+            <section class="section" id="projects">
+                <div class="section__header">
+                    <h2>Featured Project</h2>
+                    <p>Early concept drops that blend gaming rituals with modern UI craft.</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-card__content">
+                        <h3>NBA Drinking Game Lobby</h3>
+                        <p>Set the stage for a night of hoops and friendly rivalry. Build your crew, customize the rules (coming soon) and keep the vibes high with a sleek control center.</p>
+                        <a class="primary-link" href="projects/nba-drinking-game.html">Open the lobby</a>
+                    </div>
+                    <div class="project-card__meta">
+                        <span class="tag">Prototype</span>
+                        <span class="tag">Interactive UI</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="about">
+                <div class="section__header">
+                    <h2>About Me</h2>
+                    <p>Product designer &amp; creative developer exploring how playful interactions can deepen real-world connections.</p>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3 id="focus">Focus</h3>
+                        <p>I build immersive prototypes and creative tooling that blend cinematic visuals, collaborative play, and purposeful design systems.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Toolbox</h3>
+                        <p>Design strategy, front-end engineering, WebGL, creative coding, rapid prototyping, experience design.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Currently</h3>
+                        <p>Exploring AI-assisted storytelling and spatial interfaces that make remote hangouts as memorable as courtside seats.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; <span id="year"></span> Sora Studio. Crafted with curiosity.</p>
+        </footer>
+    </div>
+
+    <script src="scripts/main.js" defer></script>
+</body>
+</html>
