@@ -1,103 +1,99 @@
-.projects-main {
-    min-height: 100vh;
+.projects {
     display: grid;
-    place-items: center;
-    padding: clamp(2.5rem, 8vw, 6rem);
+    gap: clamp(2rem, 5vw, 4rem);
+    padding-top: clamp(5rem, 9vw, 8rem);
 }
 
-.projects-container {
-    width: min(960px, 100%);
+.projects__header {
+    max-width: 620px;
     display: grid;
-    gap: clamp(1.5rem, 4vw, 3rem);
-    text-align: center;
+    gap: 0.75rem;
 }
 
-.projects-container h1 {
-    margin: 0;
-    font-size: clamp(2.25rem, 7vw, 3.5rem);
-}
-
-.projects-tagline {
-    margin: 0;
-    color: var(--text-secondary);
-    font-size: clamp(1rem, 2.6vw, 1.15rem);
-}
-
-.projects-grid {
-    display: grid;
-    gap: clamp(1rem, 3vw, 1.75rem);
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-a.project-tile,
-button.project-tile {
-    display: grid;
-    place-items: center;
-    gap: 0.65rem;
-    padding: clamp(1.75rem, 5vw, 2.5rem);
-    border-radius: var(--border-radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: var(--surface-elevated);
-    box-shadow: var(--shadow-soft);
-    color: var(--text-primary);
-    font: inherit;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    text-align: center;
-    cursor: pointer;
-    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), color var(--transition);
-}
-
-a.project-tile {
-    text-decoration: none;
-}
-
-button.project-tile {
-    width: 100%;
-}
-
-.project-tile__title {
-    font-size: clamp(1.15rem, 3vw, 1.4rem);
-}
-
-.project-tile__cta {
-    font-size: 0.95rem;
-    letter-spacing: 0.2em;
+.projects__eyebrow {
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.16em;
+    font-size: 0.75rem;
+    color: var(--text-dim);
 }
 
-.project-tile--active {
-    background: linear-gradient(140deg, rgba(140, 92, 255, 0.32), rgba(56, 160, 255, 0.12));
-    border-color: rgba(140, 92, 255, 0.55);
-    box-shadow: 0 30px 60px -35px rgba(76, 56, 169, 0.8);
+.projects__title {
+    margin: 0;
+    font-size: clamp(2.25rem, 6vw, 3.25rem);
 }
 
-.project-tile--active .project-tile__cta {
+.projects__copy {
+    margin: 0;
+    color: var(--text-dim);
+}
+
+.projects__grid {
+    display: grid;
+    gap: clamp(1.25rem, 3vw, 2rem);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.project-card {
+    position: relative;
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    border-radius: var(--border-radius-lg);
+    background: var(--card);
+    box-shadow: var(--shadow);
+    display: grid;
+    gap: 0.75rem;
+    min-height: 220px;
+    transition: transform var(--transition), box-shadow var(--transition), border var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-strong);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.project-card--primary {
+    background: linear-gradient(145deg, rgba(138, 91, 255, 0.22), rgba(33, 162, 255, 0.16)) var(--card);
+}
+
+.project-card__status {
+    justify-self: flex-start;
+}
+
+.project-card__title {
+    margin: 0;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+.project-card__body {
+    margin: 0;
+    color: var(--text-dim);
+}
+
+.project-card__cta {
+    margin-top: auto;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
     color: var(--accent);
 }
 
-.project-tile--soon {
-    color: var(--text-secondary);
+.project-card--soon {
+    cursor: default;
 }
 
-a.project-tile:hover,
-a.project-tile:focus-visible,
-button.project-tile:hover,
-button.project-tile:focus-visible {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.24);
-    box-shadow: 0 30px 60px -35px rgba(22, 18, 45, 0.9);
+.project-card--soon:hover,
+.project-card--soon:focus-visible {
+    transform: none;
+    box-shadow: var(--shadow);
+    border-color: rgba(255, 255, 255, 0.08);
 }
 
-.project-tile:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(140, 92, 255, 0.28), 0 30px 60px -35px rgba(22, 18, 45, 0.9);
-    border-color: rgba(140, 92, 255, 0.55);
-}
+@media (max-width: 640px) {
+    .projects__grid {
+        grid-template-columns: 1fr;
 
-@media (max-width: 600px) {
-    .projects-tagline {
-        font-size: 0.95rem;
     }
 }

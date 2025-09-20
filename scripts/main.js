@@ -1,46 +1,37 @@
-const sidebar = document.getElementById('sidebar');
-const toggleButton = document.querySelector('.sidebar-toggle');
-const closeButton = document.querySelector('.sidebar__close');
-const overlay = document.getElementById('sidebar-overlay');
-const body = document.body;
-const yearSpan = document.getElementById('year');
+(() => {
+    const sidebar = document.querySelector('[data-sidebar]');
+    const toggles = document.querySelectorAll('[data-nav-toggle]');
+    const scrim = document.querySelector('[data-scrim]');
 
-const setSidebarState = (isOpen) => {
-    sidebar.classList.toggle('open', isOpen);
-    overlay.classList.toggle('visible', isOpen);
-    overlay.toggleAttribute('hidden', !isOpen);
-    body.classList.toggle('sidebar-open', isOpen);
-    toggleButton?.setAttribute('aria-expanded', String(isOpen));
-    sidebar.setAttribute('aria-hidden', String(!isOpen));
+    if (!sidebar || toggles.length === 0) return;
 
-    if (isOpen) {
-        const focusTarget = sidebar.querySelector('a, button');
-        focusTarget?.focus({ preventScroll: true });
-    } else {
-        toggleButton?.focus({ preventScroll: true });
-    }
-};
+    const updateState = (open) => {
+        sidebar.dataset.open = open ? 'true' : 'false';
+        document.body.classList.toggle('sidebar-open', open);
+        scrim?.toggleAttribute('hidden', !open);
+        toggles.forEach((btn) => btn.setAttribute('aria-expanded', String(open)));
+        sidebar.setAttribute('aria-hidden', String(!open));
 
-const toggleSidebar = () => {
-    setSidebarState(!sidebar.classList.contains('open'));
-};
+        if (open) {
+            const firstFocusable = sidebar.querySelector('a, button');
+            firstFocusable?.focus({ preventScroll: true });
+        } else {
+            toggles[0]?.focus({ preventScroll: true });
+        }
+    };
 
-toggleButton?.addEventListener('click', toggleSidebar);
-closeButton?.addEventListener('click', () => setSidebarState(false));
-overlay?.addEventListener('click', () => setSidebarState(false));
+    const toggle = () => {
+        const isOpen = sidebar.dataset.open === 'true';
+        updateState(!isOpen);
+    };
 
-window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && sidebar.classList.contains('open')) {
-        setSidebarState(false);
-    }
-});
+    toggles.forEach((btn) => btn.addEventListener('click', toggle));
+    scrim?.addEventListener('click', () => updateState(false));
 
-sidebar.addEventListener('transitionend', (event) => {
-    if (event.propertyName === 'transform' && !sidebar.classList.contains('open')) {
-        sidebar.scrollTop = 0;
-    }
-});
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && sidebar.dataset.open === 'true') {
+            updateState(false);
+        }
+    });
+})();
 
-if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-}

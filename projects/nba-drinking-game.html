@@ -3,195 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NBA Drinking Game</title>
-
+    <title>NBA Drinking Game Lobby</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/nba.css">
 </head>
-<body class="nba-app">
-    <div class="nba-shell">
-        <header class="nba-header">
+<body class="page page--nba">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open navigation" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-            <a class="back-link" href="../index.html" aria-label="Back to home">
-                <span aria-hidden="true">&#8592;</span>
-                Back to home
-            </a>
-            <div class="nba-header__meta">
-                <p class="project-status">Party Mode • Guess the mystery NBA player</p>
-                <h1>NBA Drinking Game</h1>
-                <p class="project-intro">Build your crew, pass the device around, and guess the mystery player from the hints. Get it right to deal the drinks, miss and you have to take them.</p>
-            </div>
+    <aside id="sidebar" class="sidebar" aria-hidden="true" data-sidebar>
+        <div class="sidebar__header">
+            <span class="sidebar__title">Navigate</span>
+            <button class="sidebar__close" aria-label="Close navigation" data-nav-toggle>&times;</button>
+        </div>
+        <nav class="sidebar__nav" aria-label="Primary">
+            <a class="sidebar__link" href="../index.html">Home</a>
+            <a class="sidebar__link" href="index.html">Projects</a>
+            <a class="sidebar__link" href="../about.html">About Me</a>
+        </nav>
+    </aside>
+    <div class="sidebar__scrim" hidden data-scrim></div>
+
+    <main class="nba" aria-labelledby="nba-title">
+        <header class="nba__header">
+            <p class="nba__eyebrow">Prototype</p>
+            <h1 class="nba__title" id="nba-title">NBA Drinking Game Lobby</h1>
+            <p class="nba__copy">Start building your lineup. Add everyone who's playing, rearrange, or remove them before the game begins. The guessing rounds are coming in a future update.</p>
         </header>
 
-        <main class="nba-main" data-stage="lobby">
-            <section class="screen" data-screen="lobby" aria-labelledby="lobby-title">
-                <div class="lobby-grid">
-                    <div class="panel lobby" role="region">
-                        <div class="panel__header">
-                            <div>
-                                <h2 id="lobby-title">Player Lobby</h2>
-                                <p class="panel__subtitle">Add everyone who&apos;s playing tonight. Remove anyone if plans change.</p>
-                            </div>
-                            <button type="button" class="secondary-button" id="clear-lobby">Clear lobby</button>
-                        </div>
-
-                        <form id="player-form" class="player-form" autocomplete="off">
-                            <label class="visually-hidden" for="player-name">Player name</label>
-                            <input id="player-name" name="player-name" type="text" placeholder="Add a player by name" required maxlength="32" aria-describedby="player-hint">
-                            <button type="submit" class="primary-button">Add player</button>
-                        </form>
-                        <p id="player-hint" class="hint-text">Press Enter to add or use the button. Duplicate names are ignored.</p>
-
-                        <div class="lobby-list" aria-live="polite">
-                            <p class="empty-state" id="lobby-empty">No players yet. Add your first teammate to get the lobby buzzing.</p>
-                            <ul id="player-list" class="player-list"></ul>
-                        </div>
-
-                        <div class="lobby-actions">
-                            <button type="button" class="primary-button" id="start-game" disabled>Tip-Off</button>
-                        </div>
-                    </div>
-
-                    <aside class="panel scoreboard" aria-labelledby="scoreboard-title">
-                        <div class="panel__header">
-                            <div>
-                                <h2 id="scoreboard-title">Scoreboard</h2>
-                                <p class="panel__subtitle">Track drinks given and taken. Reset in the lobby if needed.</p>
-                            </div>
-                            <button type="button" class="secondary-button" id="reset-scoreboard">Reset totals</button>
-                        </div>
-                        <div class="scoreboard-body" aria-live="polite">
-                            <p class="empty-state" id="scoreboard-empty">Scoreboard is quiet. Add players to keep count.</p>
-                            <table class="score-table" aria-describedby="scoreboard-title" hidden>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Player</th>
-                                        <th scope="col">Drinks Given</th>
-                                        <th scope="col">Drinks Taken</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="scoreboard-rows"></tbody>
-                            </table>
-                        </div>
-                    </aside>
+        <section class="nba__content" aria-labelledby="lobby-heading">
+            <div class="lobby" role="region" aria-live="polite">
+                <div class="lobby__header">
+                    <h2 class="lobby__title" id="lobby-heading">Player lobby</h2>
+                    <button type="button" class="btn btn--ghost" data-clear-lobby>Clear all</button>
                 </div>
-            </section>
 
-            <section class="screen" data-screen="turn" aria-live="polite" hidden>
-                <div class="center-card">
-                    <p class="eyebrow">Sip Break</p>
-                    <h2 class="turn-title">It&apos;s <span id="current-turn-player">Player</span>&apos;s turn—take a sip.</h2>
-                    <p class="turn-subtitle">Pass the device to them and get ready for the hints.</p>
-                    <div class="card-actions">
-                        <button type="button" class="primary-button" id="begin-round">Let&apos;s play</button>
-                        <button type="button" class="secondary-link" data-action="back-to-lobby">Back to Menu</button>
-                    </div>
-                </div>
-            </section>
+                <form class="lobby__form" id="player-form" autocomplete="off">
+                    <label class="visually-hidden" for="player-name">Player name</label>
+                    <input id="player-name" name="player-name" type="text" placeholder="Add a player" required maxlength="40">
+                    <button type="submit" class="btn">Add</button>
+                </form>
+                <p class="lobby__hint">Press Enter or tap add to save. Players stay saved locally so you can prep the roster before the party.</p>
 
-            <section class="screen" data-screen="round" hidden>
-                <div class="round-grid">
-                    <article class="panel hints" aria-labelledby="hint-title">
-                        <div class="panel__header">
-                            <div>
-                                <h2 id="hint-title">Mystery Player Hints</h2>
-                                <p class="panel__subtitle">Study the clues, then lock in your guess.</p>
-                            </div>
-                            <p class="hint-level" id="penalty-label">5 drink stakes</p>
-                        </div>
-                        <div class="hint-media">
-                            <div class="team-logo">
-                                <img id="team-logo" src="" alt="Team logo" loading="lazy">
-                            </div>
-                            <div class="player-photo">
-                                <img id="player-photo" src="" alt="Mystery player silhouette" loading="lazy">
+                <ul class="lobby__list" data-player-list></ul>
+                <p class="lobby__empty" data-empty-state>No players yet. Add your crew to get started.</p>
+            </div>
 
-                            </div>
-                        </div>
-                        <dl class="hint-list">
-                            <div>
-                                <dt>Position</dt>
-                                <dd id="hint-position">—</dd>
-                            </div>
-                            <div>
-                                <dt>Draft Year</dt>
-                                <dd id="hint-draft">—</dd>
-                            </div>
-                            <div>
-                                <dt>Jersey #</dt>
-                                <dd id="hint-jersey">—</dd>
-                            </div>
-                            <div>
-                                <dt>PPG</dt>
-                                <dd id="hint-pts">—</dd>
-                            </div>
-                            <div>
-                                <dt>RPG</dt>
-                                <dd id="hint-reb">—</dd>
-                            </div>
-                            <div>
-                                <dt>APG</dt>
-                                <dd id="hint-ast">—</dd>
-                            </div>
-                        </dl>
-                    </article>
+            <aside class="panel panel--data" aria-labelledby="suggestions-heading">
+                <h2 class="panel__title" id="suggestions-heading">Fantasy player spotlight</h2>
+                <p class="panel__copy">Pulled from Hashtag Basketball's latest fantasy rankings. Use the quick-add buttons to drop popular stars into your lobby.</p>
+                <div class="panel__list" data-fantasy-picks></div>
+                <p class="panel__footnote"><a href="https://hashtagbasketball.com/fantasy-basketball-rankings" target="_blank" rel="noopener">View the full rankings</a></p>
+            </aside>
+        </section>
+    </main>
 
-                    <section class="panel guess" aria-labelledby="guess-title">
-                        <div class="panel__header">
-                            <div>
-                                <h2 id="guess-title">Lock In Your Guess</h2>
-                                <p class="panel__subtitle">Type the player name or pick from the list.</p>
-                            </div>
-                        </div>
-                        <form id="guess-form" class="guess-form" autocomplete="off">
-                            <label for="player-guess" class="input-label">Mystery player name</label>
-                            <div class="guess-input">
-                                <input id="player-guess" name="player-guess" type="text" list="player-options" placeholder="Start typing a name" required>
-                                <datalist id="player-options"></datalist>
-                                <button type="submit" class="primary-button">Submit guess</button>
-                            </div>
-                        </form>
-                        <div class="round-feedback" aria-live="polite" id="round-feedback"></div>
-                    </section>
-                </div>
-            </section>
-
-            <section class="screen" data-screen="result" hidden>
-                <div class="result-card">
-                    <p class="eyebrow" id="result-eyebrow">Round Result</p>
-                    <h2 id="result-title">Correct! Allocate 5 drinks.</h2>
-                    <div class="result-media">
-                        <img id="result-photo" src="" alt="Revealed player photo" loading="lazy">
-                        <div class="result-meta">
-                            <h3 id="result-name">Player Name</h3>
-                            <p id="result-team">Team</p>
-                            <ul class="result-stats">
-                                <li><span>Position</span><span id="result-position">—</span></li>
-                                <li><span>Draft Year</span><span id="result-draft">—</span></li>
-                                <li><span>Jersey #</span><span id="result-jersey">—</span></li>
-                                <li><span>PPG</span><span id="result-pts">—</span></li>
-                                <li><span>RPG</span><span id="result-reb">—</span></li>
-                                <li><span>APG</span><span id="result-ast">—</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p class="result-message" id="result-message"></p>
-                    <div class="card-actions">
-                        <button type="button" class="primary-button" id="next-player">Next player</button>
-                        <button type="button" class="secondary-link" data-action="back-to-lobby">Back to Menu</button>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <p>&copy; <span id="year"></span> Sora Studio. Play responsibly and hydrate.</p>
-
-        </footer>
-    </div>
+    <script src="../scripts/main.js" defer></script>
 
     <script src="../scripts/nba.js" defer></script>
 </body>

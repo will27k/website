@@ -1,37 +1,120 @@
-.home-main {
-    min-height: 100vh;
+.home {
     display: grid;
-    place-items: center;
-    padding: clamp(2.5rem, 8vw, 6rem);
+    gap: clamp(2rem, 4vw, 4rem);
+    padding-top: clamp(4rem, 8vw, 8rem);
 }
 
-.home-card {
-    background: var(--surface-elevated);
+.hero {
+    position: relative;
+    display: grid;
+    align-items: center;
+    min-height: clamp(24rem, 70vh, 36rem);
     border-radius: var(--border-radius-lg);
-    padding: clamp(2.5rem, 6vw, 4.5rem);
-    text-align: center;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    background: var(--bg-muted);
+    box-shadow: var(--shadow-strong);
+}
+
+.hero__media {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(7, 8, 15, 0.75), rgba(7, 8, 15, 0.35)),
+        url('https://cdn.openai.com/sora/images/dreamscape-modern-lounge.webp') center/cover;
+    filter: saturate(1.15);
+    transform: scale(1.02);
+}
+
+.hero__content {
+    position: relative;
+    padding: clamp(2rem, 5vw, 4rem);
+    max-width: 540px;
     display: grid;
     gap: 1rem;
-    max-width: min(520px, 100%);
 }
 
-.home-card h1 {
+.hero__eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+}
+
+.hero__title {
+    font-size: clamp(2.5rem, 6vw, 4rem);
     margin: 0;
-    font-size: clamp(2.75rem, 8vw, 4rem);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.035em;
 }
 
-.home-card p {
+.hero__subtitle {
     margin: 0;
-    color: var(--text-secondary);
-    font-size: clamp(1.05rem, 3vw, 1.2rem);
+    color: var(--text-dim);
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
 }
 
-@media (max-width: 640px) {
-    .home-card {
-        padding: clamp(2rem, 10vw, 3rem);
+.hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.spotlight {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.spotlight__title {
+    margin: 0;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+
+.spotlight-card {
+    background: var(--card);
+    border-radius: var(--border-radius-lg);
+    padding: clamp(1.75rem, 4vw, 2.75rem);
+    display: grid;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.spotlight-card header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.spotlight-card h3 {
+    margin: 0;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+}
+
+.spotlight-card__copy {
+    margin: 0;
+    color: var(--text-dim);
+}
+
+.spotlight-card__link {
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.75rem;
+}
+
+.spotlight-card__link:hover,
+.spotlight-card__link:focus-visible {
+    color: var(--text);
+}
+
+@media (max-width: 720px) {
+    .hero__content {
+        max-width: 100%;
+    }
+
+    .hero__cta {
+        flex-direction: column;
+        align-items: stretch;
 
     }
 }
