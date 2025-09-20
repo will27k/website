@@ -47,6 +47,7 @@
 .lobby__header {
     display: flex;
     align-items: center;
+
     justify-content: space-between;
     gap: 1rem;
 }
@@ -95,6 +96,7 @@
     justify-content: space-between;
     gap: 1rem;
     background: rgba(255, 255, 255, 0.08);
+
     border-radius: var(--border-radius-sm);
     padding: 0.75rem 1rem;
 }
@@ -205,5 +207,6 @@
     .lobby__actions {
         width: 100%;
         justify-content: space-between;
+
     }
 }
